@@ -1,22 +1,28 @@
-/* Colors */
+/* =========================
+   Step 1: External CSS File Linked
+   ========================= */
 :root {
+  /* Step 4: Colors (Color Palette Variables) */
   --mustard: #D8A300;
   --dark-brown: #5C4033;
   --white: #FFFFFF;
   --light-mustard: rgba(255,248,225,0.95);
 }
 
-/* Base */
+/* =========================
+   Step 2: CSS Selectors
+   ========================= */
+
+/* Element selectors */
 html, body {
-  font-family: "Times New Roman", Times, serif;
-  background: url('images/cover.jpg') no-repeat center center fixed;
+  font-family: "Times New Roman", Times, serif; /* Step 3: Typography */
+  background: url('images/cover.jpg') no-repeat center center fixed; /* Step 4: Background Image */
   background-size: cover;
   margin: 0;
   padding: 0;
   color: var(--dark-brown);
   min-height: 100%;
   height: 100%;
-  margin: 0;
   display: flex;
   flex-direction: column;
 }
@@ -24,46 +30,22 @@ main {
   flex: 1;
 }
 
-/* Header */
-header.site-header {
-  background: var(--dark-brown);
-  color: var(--white);
-  padding: 0;
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 20px;
-  position: relative;
-}
-.logo {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 12px;
-}
-.site-title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--white);
+/* ID selector */
+#main {
+  padding: 20px;
 }
 
-/* Navigation */
-nav.main-nav {
-  background: var(--mustard);
+/* Class selectors */
+.form-card {
+  background: var(--light-mustard);
+  border: 1px solid rgba(92,64,51,0.6);
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
 }
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 20px;
-}
+
+/* Descendant selectors */
 nav.main-nav a {
   color: var(--dark-brown);
   text-decoration: none;
@@ -81,15 +63,45 @@ nav.main-nav a.active {
   color: var(--mustard);
 }
 
-/* Forms */
-.form-card {
-  background: var(--light-mustard);
-  border: 1px solid rgba(92,64,51,0.6);
-  border-radius: 8px;
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 25px;
+/* =========================
+   Step 3: Typography
+   ========================= */
+.site-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--white);
 }
+
+/* =========================
+   Step 4: Colors & Backgrounds
+   ========================= */
+header.site-header {
+  background: var(--dark-brown);
+  color: var(--white);
+  padding: 0;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  position: relative;
+}
+.logo {
+  /* Step 7: Image Styling */
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+/* =========================
+   Step 5: Layout & Box Model
+   ========================= */
 .section-title {
   margin: 0 0 15px;
   text-align: center;
@@ -97,6 +109,7 @@ nav.main-nav a.active {
   padding-bottom: 10px;
 }
 .section-title::before {
+  /* Step 9: Advanced Styling with Pseudo-element */
   content: "";
   position: absolute;
   left: 50%;
@@ -108,6 +121,9 @@ nav.main-nav a.active {
   border-radius: 2px;
 }
 
+/* =========================
+   Step 8: HTML Forms
+   ========================= */
 form label {
   display: block;
   margin-top: 12px;
@@ -138,11 +154,13 @@ form input[type="password"] {
   padding: 12px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background 0.2s ease; /* Step 9: Transition */
 }
 .btn-primary:hover {
   background: #c49700;
 }
 
+/* Descendant selector again for links inside form notes */
 .form-note {
   margin-top: 15px;
   text-align: center;
@@ -157,7 +175,23 @@ form input[type="password"] {
   text-decoration: underline;
 }
 
-/* Footer */
+/* =========================
+   Step 6 & 9: Navigation + Transitions
+   ========================= */
+nav.main-nav {
+  background: var(--mustard);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 20px;
+}
+
+/* =========================
+   Step 5: Footer
+   ========================= */
 footer {
   text-align: center;
   color: var(--white);
